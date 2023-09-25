@@ -13,5 +13,31 @@ def longest_palindrome(s: str):
     return longest
 
 
-print(longest_palindrome(s="babad"))
-print(longest_palindrome("cbbd"))
+def longest_palindrome(s: str):
+    n = len(s)
+    dp = [[False] * n for _ in range(n)]
+    ans = [0, 0]
+
+    for i in range(n):
+        dp[i][i] = True
+
+    for i in range(n-1):
+        if s[i] == s[i+1]:
+            dp[i][i+1] = True
+            ans = [i, i+1]
+
+    for diff in range(2, n):
+        for i in range(n-diff):
+            j = i + diff
+
+
+# print(longest_palindrome("babad"))
+# print(longest_palindrome("cbbd"))
+# print(longest_palindrome("v"))
+# print(longest_palindrome('ac'))
+
+
+length = 6
+
+a = [[False] * length for _ in range(length)]
+print(a)
